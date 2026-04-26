@@ -8,3 +8,4 @@ export 'package:formunda/controller/formunda_controller.dart';
 export 'package:formunda/parser/formunda_parser.dart';
 export 'package:formunda/condition/formunda_condition.dart';
 export 'package:formunda/condition/formunda_condition_evaluator.dart';
+export 'package:formunda/modes/render_mode.dart';
