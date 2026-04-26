@@ -18,6 +18,8 @@ class FormundaParser {
       return FormundaGroupNode(
         id: json['id'],
         type: type,
+        label: json['label'],
+        showOutline: json['showOutline'],
         condition: condition,
         children: parse(json['components'] ?? []),
       );
