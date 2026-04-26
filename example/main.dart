@@ -1577,7 +1577,7 @@ class _CamundaFormPageState extends State<CamundaFormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Formunda')),
-     body: FormundaBuilder(json: rawData),
+     body: FormundaWidget(data: rawData),
     );
   }
 }
