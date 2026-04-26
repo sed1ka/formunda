@@ -32,7 +32,7 @@ final Map<String, dynamic> rawData = {
           "layout": {"row": "Row_0xz33u4", "columns": null},
           "id": "Field_08z1llq",
           "source":
-              "https://drive.google.com/thumbnail?id=1RSV2q3elh93UZpJT7DbKxUKQzcuYAe5v&sz=w1000",
+          "https://drive.google.com/thumbnail?id=1RSV2q3elh93UZpJT7DbKxUKQzcuYAe5v&sz=w1000",
         },
       ],
       "showOutline": true,
@@ -781,7 +781,7 @@ final Map<String, dynamic> rawData = {
         },
         {
           "label":
-              "30. Bodi shackle – tidak ada retak, nick, atau grooves dalam",
+          "30. Bodi shackle – tidak ada retak, nick, atau grooves dalam",
           "values": [
             {"label": "OK – Kondisi Baik", "value": "OK"},
             {"label": "NG – Tidak Layak", "value": "NG"},
@@ -991,7 +991,7 @@ final Map<String, dynamic> rawData = {
         },
         {
           "label":
-              "40. Rem / brake berfungsi normal (tidak slip saat dibebani)",
+          "40. Rem / brake berfungsi normal (tidak slip saat dibebani)",
           "values": [
             {"label": "OK – Kondisi Baik", "value": "OK"},
             {"label": "NG – Tidak Layak", "value": "NG"},
@@ -1101,7 +1101,7 @@ final Map<String, dynamic> rawData = {
         },
         {
           "label":
-              "45. Kondisi fisik chain lashing – tidak ada retak / elongasi",
+          "45. Kondisi fisik chain lashing – tidak ada retak / elongasi",
           "values": [
             {"label": "OK – Kondisi Baik", "value": "OK"},
             {"label": "NG – Tidak Layak", "value": "NG"},
@@ -1162,7 +1162,7 @@ final Map<String, dynamic> rawData = {
         },
         {
           "label":
-              "48. Ratchet strapping – tidak ada sobekan / fraying pada webbing",
+          "48. Ratchet strapping – tidak ada sobekan / fraying pada webbing",
           "values": [
             {"label": "OK – Kondisi Baik", "value": "OK"},
             {"label": "NG – Tidak Layak", "value": "NG"},
@@ -1183,7 +1183,7 @@ final Map<String, dynamic> rawData = {
         },
         {
           "label":
-              "49. Corner protector tersedia sesuai jumlah sudut tajam muatan",
+          "49. Corner protector tersedia sesuai jumlah sudut tajam muatan",
           "values": [
             {"label": "OK – Kondisi Baik", "value": "OK"},
             {"label": "NG – Tidak Layak", "value": "NG"},
@@ -1333,7 +1333,7 @@ final Map<String, dynamic> rawData = {
         },
         {
           "label":
-              "56. Turnbuckle / load binder – ulir tidak rusak, bergerak lancar",
+          "56. Turnbuckle / load binder – ulir tidak rusak, bergerak lancar",
           "values": [
             {"label": "OK – Kondisi Baik", "value": "OK"},
             {"label": "NG – Tidak Layak", "value": "NG"},
@@ -1483,7 +1483,7 @@ final Map<String, dynamic> rawData = {
         },
         {
           "label":
-              "63. Radio / HT berfungsi – operator, rigger, spotter, supervisor",
+          "63. Radio / HT berfungsi – operator, rigger, spotter, supervisor",
           "values": [
             {"label": "OK – Kondisi Baik", "value": "OK"},
             {"label": "NG – Tidak Layak", "value": "NG"},
@@ -1552,12 +1552,12 @@ final Map<String, dynamic> rawData = {
     },
     {
       "text":
-          "### ⚠ STOP WORK AUTHORITY\n**PERHATIAN: Terdapat item dengan status NG (Tidak Layak). Operasi loading HARUS DIHENTIKAN sampai semua item NG diperbaiki, diganti, dan diinspeksi ulang. Stop-work authority berlaku untuk semua personel.**",
+      "### ⚠ STOP WORK AUTHORITY\n**PERHATIAN: Terdapat item dengan status NG (Tidak Layak). Operasi loading HARUS DIHENTIKAN sampai semua item NG diperbaiki, diganti, dan diinspeksi ulang. Stop-work authority berlaku untuk semua personel.**",
       "type": "text",
       "id": "alert_stop_work",
       "condition": {
         "hide":
-            "=(\"NG\" != a01_konstruksi) and (\"NG\" != a02_diameter) and (\"NG\" != a03_panjang) and (\"NG\" != a04_kinking) and (\"NG\" != a05_birdcaging) and (\"NG\" != a06_brokenWires) and (\"NG\" != a07_karat) and (\"NG\" != a08_crush) and (\"NG\" != a09_thimble) and (\"NG\" != a10_tagSWL) and (\"NG\" != a11_sertifikat) and (\"NG\" != b12_grade) and (\"NG\" != b13_retakPatah) and (\"NG\" != b14_deformasi) and (\"NG\" != b15_keausan) and (\"NG\" != b16_masterLink) and (\"NG\" != b17_hookLatch) and (\"NG\" != b18_tagSWL) and (\"NG\" != b19_sertifikat) and (\"NG\" != c20_material) and (\"NG\" != c21_sobekan) and (\"NG\" != c22_heatDamage) and (\"NG\" != c23_kontaminasi) and (\"NG\" != c24_jahitan) and (\"NG\" != c25_abrasi) and (\"NG\" != c26_tagSWL) and (\"NG\" != c27_sertifikat) and (\"NG\" != d28_tipe) and (\"NG\" != d29_ratingWLL) and (\"NG\" != d30_bodi) and (\"NG\" != d31_pin) and (\"NG\" != d32_cotterPin) and (\"NG\" != d33_pinTerpasang) and (\"NG\" != d34_markingSWL) and (\"NG\" != e35_kapasitas) and (\"NG\" != e36_loadChain) and (\"NG\" != e37_handChain) and (\"NG\" != e38_hookAtas) and (\"NG\" != e39_hookBawah) and (\"NG\" != e40_rem) and (\"NG\" != e41_gearbox) and (\"NG\" != e42_sertifikat) and (\"NG\" != f43_jumlah) and (\"NG\" != f44_gradeSWL) and (\"NG\" != f45_kondisi) and (\"NG\" != f46_ratchet) and (\"NG\" != f47_hookLashing) and (\"NG\" != f48_strapping) and (\"NG\" != f49_cornerProtector) and (\"NG\" != g50_timberBlock) and (\"NG\" != g51_dunmageMat) and (\"NG\" != g52_wheelChock) and (\"NG\" != g53_hydraulicJack) and (\"NG\" != g54_spreaderBar) and (\"NG\" != g55_loadingRamp) and (\"NG\" != g56_turnbuckle) and (\"NG\" != h57_helm) and (\"NG\" != h58_safetyShoes) and (\"NG\" != h59_sarungTangan) and (\"NG\" != h60_safetyVest) and (\"NG\" != h61_harness) and (\"NG\" != h62_kacamata) and (\"NG\" != h63_radioHT)",
+        "=(\"NG\" != a01_konstruksi) and (\"NG\" != a02_diameter) and (\"NG\" != a03_panjang) and (\"NG\" != a04_kinking) and (\"NG\" != a05_birdcaging) and (\"NG\" != a06_brokenWires) and (\"NG\" != a07_karat) and (\"NG\" != a08_crush) and (\"NG\" != a09_thimble) and (\"NG\" != a10_tagSWL) and (\"NG\" != a11_sertifikat) and (\"NG\" != b12_grade) and (\"NG\" != b13_retakPatah) and (\"NG\" != b14_deformasi) and (\"NG\" != b15_keausan) and (\"NG\" != b16_masterLink) and (\"NG\" != b17_hookLatch) and (\"NG\" != b18_tagSWL) and (\"NG\" != b19_sertifikat) and (\"NG\" != c20_material) and (\"NG\" != c21_sobekan) and (\"NG\" != c22_heatDamage) and (\"NG\" != c23_kontaminasi) and (\"NG\" != c24_jahitan) and (\"NG\" != c25_abrasi) and (\"NG\" != c26_tagSWL) and (\"NG\" != c27_sertifikat) and (\"NG\" != d28_tipe) and (\"NG\" != d29_ratingWLL) and (\"NG\" != d30_bodi) and (\"NG\" != d31_pin) and (\"NG\" != d32_cotterPin) and (\"NG\" != d33_pinTerpasang) and (\"NG\" != d34_markingSWL) and (\"NG\" != e35_kapasitas) and (\"NG\" != e36_loadChain) and (\"NG\" != e37_handChain) and (\"NG\" != e38_hookAtas) and (\"NG\" != e39_hookBawah) and (\"NG\" != e40_rem) and (\"NG\" != e41_gearbox) and (\"NG\" != e42_sertifikat) and (\"NG\" != f43_jumlah) and (\"NG\" != f44_gradeSWL) and (\"NG\" != f45_kondisi) and (\"NG\" != f46_ratchet) and (\"NG\" != f47_hookLashing) and (\"NG\" != f48_strapping) and (\"NG\" != f49_cornerProtector) and (\"NG\" != g50_timberBlock) and (\"NG\" != g51_dunmageMat) and (\"NG\" != g52_wheelChock) and (\"NG\" != g53_hydraulicJack) and (\"NG\" != g54_spreaderBar) and (\"NG\" != g55_loadingRamp) and (\"NG\" != g56_turnbuckle) and (\"NG\" != h57_helm) and (\"NG\" != h58_safetyShoes) and (\"NG\" != h59_sarungTangan) and (\"NG\" != h60_safetyVest) and (\"NG\" != h61_harness) and (\"NG\" != h62_kacamata) and (\"NG\" != h63_radioHT)",
       },
       "layout": {"row": "Row_14dvw3g"},
     },
@@ -1577,7 +1577,7 @@ class _CamundaFormPageState extends State<CamundaFormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Formunda')),
-     body: FormundaWidget(data: rawData),
+      body: FormundaWidget(data: rawData, renderMode: RenderMode.listView),
     );
   }
 }
