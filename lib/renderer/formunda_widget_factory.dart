@@ -33,7 +33,7 @@ class FormundaWidgetFactory {
         if (node is FormundaGroupNode) return buildGroup(context, node);
         if (node is FormundaTextNode) return buildText(context, node);
         if (node is FormundaFieldNode) return buildField(context, node);
-        
+
         return const SizedBox.shrink();
       },
     );
@@ -56,7 +56,10 @@ class FormundaWidgetFactory {
           if (node.label?.isNotEmpty ?? false)
             Padding(
               padding: const EdgeInsets.only(bottom: 8),
-              child: Text(node.label!, style: const TextStyle(fontWeight: FontWeight.bold)),
+              child: Text(
+                node.label!,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ...node.children.map((child) => buildNode(context, child)),
         ],
@@ -102,22 +105,27 @@ class _AutomaticTextFieldState extends State<_AutomaticTextField> {
   @override
   void initState() {
     super.initState();
-    final initialValue = widget.factory.controller.getValue(widget.node.key ?? '');
-    _textController = TextEditingController(text: (initialValue ?? widget.node.defaultValue ?? '').toString());
-    
+    final initialValue = widget.factory.controller.getValue(
+      widget.node.key ?? '',
+    );
+    _textController = TextEditingController(
+      text: (initialValue ?? widget.node.defaultValue ?? '').toString(),
+    );
+
     _focusNode = FocusNode();
-    
+
     // Daftarkan ke controller agar bisa di-scroll dari luar lewat ID
     widget.factory.controller.registerFocusNode(widget.node.id, _focusNode);
-    
+
     // Inilah cara scrolling yang "Aman" dan "Otomatis"
     _focusNode.addListener(() {
       if (_focusNode.hasFocus) {
         // Flutter akan menghitung posisi widget secara presisi di dalam viewport
         Scrollable.ensureVisible(
-          context, 
-          duration: const Duration(milliseconds: 400), 
-          alignment: 0.2, // Memberikan sedikit ruang di atas field (padding scroll)
+          context,
+          duration: const Duration(milliseconds: 400),
+          alignment: 0.2,
+          // Memberikan sedikit ruang di atas field (padding scroll)
           curve: Curves.easeInOut,
         );
       }
@@ -144,7 +152,8 @@ class _AutomaticTextFieldState extends State<_AutomaticTextField> {
           labelText: widget.node.label,
           border: const OutlineInputBorder(),
         ),
-        onChanged: (val) => widget.factory.controller.setValue(widget.node.key!, val),
+        onChanged: (val) =>
+            widget.factory.controller.setValue(widget.node.key!, val),
         onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
       ),
     );
@@ -169,12 +178,12 @@ class _AutomaticSelectFieldState extends State<_AutomaticSelectField> {
     super.initState();
     _focusNode = FocusNode();
     widget.factory.controller.registerFocusNode(widget.node.id, _focusNode);
-    
+
     _focusNode.addListener(() {
       if (_focusNode.hasFocus) {
         Scrollable.ensureVisible(
-          context, 
-          duration: const Duration(milliseconds: 400), 
+          context,
+          duration: const Duration(milliseconds: 400),
           alignment: 0.2,
         );
       }
@@ -194,12 +203,21 @@ class _AutomaticSelectFieldState extends State<_AutomaticSelectField> {
       child: Focus(
         focusNode: _focusNode,
         child: DropdownButtonFormField<String>(
-          initialValue: widget.factory.controller.getValue(widget.node.key!) ?? widget.node.defaultValue,
+          initialValue:
+              widget.factory.controller.getValue(widget.node.key!) ??
+              widget.node.defaultValue,
           decoration: InputDecoration(
             labelText: widget.node.label,
             border: const OutlineInputBorder(),
           ),
-          items: widget.node.values?.map((opt) => DropdownMenuItem(value: opt['value'].toString(), child: Text(opt['label']))).toList(),
+          items: widget.node.values
+              ?.map(
+                (opt) => DropdownMenuItem(
+                  value: opt['value'].toString(),
+                  child: Text(opt['label']),
+                ),
+              )
+              .toList(),
           onChanged: (val) {
             widget.factory.controller.setValue(widget.node.key!, val);
             _focusNode.requestFocus(); // Trigger scroll saat terpilih
