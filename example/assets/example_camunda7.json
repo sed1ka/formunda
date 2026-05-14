@@ -1,0 +1,222 @@
+{
+  "components": [
+    {
+      "type": "image",
+      "layout": {
+        "row": "Row_1nalihf",
+        "columns": null
+      },
+      "id": "Field_1rfb6ug"
+    },
+    {
+      "type": "table",
+      "layout": {
+        "row": "Row_03dr6cy",
+        "columns": null
+      },
+      "label": "Table",
+      "rowCount": 10,
+      "columns": [
+        {
+          "label": "ID",
+          "key": "id"
+        },
+        {
+          "label": "Name",
+          "key": "name"
+        },
+        {
+          "label": "Date",
+          "key": "date"
+        }
+      ],
+      "id": "Field_1a3cndi",
+      "dataSource": "=Field_1a3cndi"
+    },
+    {
+      "label": "Document preview",
+      "type": "documentPreview",
+      "layout": {
+        "row": "Row_05coj1g",
+        "columns": null
+      },
+      "id": "Field_0qel5v6"
+    },
+    {
+      "height": 60,
+      "type": "spacer",
+      "layout": {
+        "row": "Row_1o0ll1z",
+        "columns": null
+      },
+      "id": "Field_14hfuir"
+    },
+    {
+      "type": "separator",
+      "layout": {
+        "row": "Row_08eo5pe",
+        "columns": null
+      },
+      "id": "Field_1az0plp"
+    },
+    {
+      "label": "Dynamic list",
+      "components": [],
+      "showOutline": true,
+      "isRepeating": true,
+      "allowAddRemove": true,
+      "defaultRepetitions": 1,
+      "type": "dynamiclist",
+      "layout": {
+        "row": "Row_0ovm12h",
+        "columns": null
+      },
+      "id": "Field_0wg6q9m",
+      "path": "dynamiclist_kbsyk8"
+    },
+    {
+      "label": "Text field",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1iaruvz",
+        "columns": null
+      },
+      "id": "Field_0attzlv",
+      "key": "textfield_fqkijp"
+    },
+    {
+      "label": "Text area",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0kus1mv",
+        "columns": null
+      },
+      "id": "Field_16ur7qw",
+      "key": "textarea_3dfmzw"
+    },
+    {
+      "label": "Number",
+      "type": "number",
+      "layout": {
+        "row": "Row_1qu2uus",
+        "columns": null
+      },
+      "id": "Field_1tq9qpo",
+      "key": "number_tlbonf"
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "Date",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_0ufscmm",
+        "columns": null
+      },
+      "id": "Field_1p9i5tr",
+      "key": "datetime_z31q"
+    },
+    {
+      "computeOn": "change",
+      "type": "expression",
+      "layout": {
+        "row": "Row_1auh4wd",
+        "columns": null
+      },
+      "id": "Field_1xakxdj",
+      "key": "expression_ro8ldt"
+    },
+    {
+      "label": "File picker",
+      "type": "filepicker",
+      "layout": {
+        "row": "Row_11ze31w",
+        "columns": null
+      },
+      "id": "Field_0vkhd0r",
+      "key": "filepicker_gpaecj"
+    },
+    {
+      "label": "Checkbox",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_0fa8n0j",
+        "columns": null
+      },
+      "id": "Field_0n6rjd6",
+      "key": "checkbox_jp5je"
+    },
+    {
+      "label": "Checkbox group",
+      "values": [
+        {
+          "label": "Value",
+          "value": "value"
+        }
+      ],
+      "type": "checklist",
+      "layout": {
+        "row": "Row_0ozdqzi",
+        "columns": null
+      },
+      "id": "Field_1piounr",
+      "key": "checklist_u377om"
+    },
+    {
+      "label": "Radio group",
+      "values": [
+        {
+          "label": "Value",
+          "value": "value"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_08y9xzu",
+        "columns": null
+      },
+      "id": "Field_1chm9gw",
+      "key": "radio_9u2qx9"
+    },
+    {
+      "label": "Select",
+      "values": [
+        {
+          "label": "Value",
+          "value": "value"
+        }
+      ],
+      "type": "select",
+      "layout": {
+        "row": "Row_056m5u8",
+        "columns": null
+      },
+      "id": "Field_0olrulk",
+      "key": "select_z791de"
+    },
+    {
+      "label": "Tag list",
+      "values": [
+        {
+          "label": "Value",
+          "value": "value"
+        }
+      ],
+      "type": "taglist",
+      "layout": {
+        "row": "Row_0ikfqb9",
+        "columns": null
+      },
+      "id": "Field_0p98bcm",
+      "key": "taglist_k7ts2"
+    }
+  ],
+  "type": "default",
+  "id": "Form_05e7ewn",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.46.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.24.0",
+  "schemaVersion": 19
+}

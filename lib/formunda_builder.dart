@@ -1,13 +1,11 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:formunda/controller/formunda_controller.dart';
 import 'package:formunda/models/formunda_node.dart';
-import 'package:formunda/parser/formunda_parser.dart' show FormundaParser;
-import 'package:formunda/renderer/formunda_renderer.dart' show FormundaRenderer;
+import 'package:formunda/parser/formunda_parser.dart';
+import 'package:formunda/renderer/formunda_renderer.dart';
 import 'package:formunda/modes/render_mode.dart';
 
-/// Signature untuk custom builder. 
-/// Jika mengembalikan null, maka sistem akan menggunakan widget default.
 typedef FormundaCustomWidgetBuilder = Widget? Function(
   BuildContext context,
   FormundaNode node,
@@ -18,11 +16,7 @@ class FormundaWidget extends StatefulWidget {
   final Map<String, dynamic> data;
   final FormundaController controller;
   final RenderMode renderMode;
-  
-  /// Custom builder persis seperti di flutter_widget_from_html
   final FormundaCustomWidgetBuilder? customWidgetBuilder;
-
-  /// Builder yang ditampilkan saat proses parsing JSON (Isolate)
   final WidgetBuilder? onLoadingBuilder;
 
   FormundaWidget({
@@ -40,25 +34,33 @@ class FormundaWidget extends StatefulWidget {
 
 class _FormundaWidgetState extends State<FormundaWidget> {
   Future<List<FormundaNode>>? _parserFuture;
+  List<FormundaNode>? _cachedNodes;
+  Map<String, dynamic>? _lastData;
 
   @override
   void initState() {
     super.initState();
-    _startParsing();
+    _startParsingIfNeeded();
   }
 
   @override
   void didUpdateWidget(FormundaWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.data != oldWidget.data) {
-      _startParsing();
-    }
+    _startParsingIfNeeded();
   }
 
-  void _startParsing() {
-    _parserFuture = compute((Map<String, dynamic> json) {
-      return FormundaParser.parse(json['components'] ?? []);
-    }, widget.data);
+  void _startParsingIfNeeded() {
+    // Sync Check: Hanya parse jika data JSON benar-benar berbeda
+    if (_lastData != null && mapEquals(widget.data, _lastData)) {
+      return;
+    }
+    
+    _lastData = widget.data;
+    _parserFuture = compute(_parseInBackground, widget.data);
+  }
+
+  static List<FormundaNode> _parseInBackground(Map<String, dynamic> data) {
+    return FormundaParser.parse(data['components'] ?? []);
   }
 
   @override
@@ -66,17 +68,19 @@ class _FormundaWidgetState extends State<FormundaWidget> {
     return FutureBuilder<List<FormundaNode>>(
       future: _parserFuture,
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
+        if (snapshot.connectionState == ConnectionState.waiting && _cachedNodes == null) {
           return widget.onLoadingBuilder?.call(context) ?? 
-                 const Center(child: Text('Loading Form...'));
+                 const Center(child: CircularProgressIndicator());
         }
 
-        if (snapshot.hasError) {
-          return Center(child: Text('Error: ${snapshot.error}'));
+        if (snapshot.hasData) {
+          _cachedNodes = snapshot.data;
         }
+
+        final nodes = _cachedNodes ?? [];
 
         return FormundaRenderer(
-          data: snapshot.data ?? [],
+          data: nodes,
           controller: widget.controller,
           customWidgetBuilder: widget.customWidgetBuilder,
           renderMode: widget.renderMode,

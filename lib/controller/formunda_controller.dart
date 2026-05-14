@@ -39,6 +39,10 @@ class FormundaController extends ChangeNotifier {
 
   Map<String, dynamic> get values => _values;
 
+  void submit() {
+    debugPrint("Form Submitted: $_values");
+  }
+
   @override
   void dispose() {
     _fieldStreamController.close();
